@@ -67,3 +67,29 @@ size_t partition(int array[], size_t size)
 	}
 	return (i + 1);
 }
+
+/*
+ * print_sort - prints sorted array
+ *
+ * @array: array to be printed
+ *
+ * @size: Size of array
+ *
+ * @init: initialize array
+ *
+ * Return: void
+ */
+
+void print_sort(int array[], size_t size, int init)
+{
+	static int *p = (void *)0;
+	static size_t s;
+
+	if (!p && init)
+	{
+		p = array;
+		s = size;
+	}
+	if (!init)
+		print_array(p, s);
+}
